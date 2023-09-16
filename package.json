@@ -1,0 +1,25 @@
+{
+  "name": "broos",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discord-player/extractor": "^4.4.3",
+    "@distube/ytdl-core": "^4.13.0",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@napi-rs/canvas": "^0.1.44",
+    "canvacord": "^5.4.10",
+    "canvafy": "^7.0.4",
+    "discord-player": "^6.6.3",
+    "discord.js": "^14.13.0",
+    "mongoose": "^7.5.1",
+    "opusscript": "^0.1.0",
+    "replicate": "^0.18.0"
+  }
+}
