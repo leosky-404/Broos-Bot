@@ -1,9 +1,8 @@
 const { Player } = require("discord-player");
 const { SpotifyExtractor, SoundCloudExtractor } = require('@discord-player/extractor');
-const { client } = require("../index");
 const { EmbedBuilder } = require("discord.js");
 
-(async () => {
+async function createPlayer(client) {
     const player = new Player(client, {
         useLegacyFFmpeg: false,
         ytdlOptions: {
@@ -12,6 +11,7 @@ const { EmbedBuilder } = require("discord.js");
         }
     });
 
+    await player.extractors.loadDefault();
     await player.extractors.register(SpotifyExtractor, {});
     await player.extractors.register(SoundCloudExtractor, {});
 
@@ -32,4 +32,6 @@ const { EmbedBuilder } = require("discord.js");
             embeds: [embed]
         });
     });
-});
+}
+
+module.exports = { createPlayer };

@@ -8,16 +8,19 @@ const client = new Client({
         IntentsBitField.Flags.Guilds,
         IntentsBitField.Flags.GuildMembers,
         IntentsBitField.Flags.GuildMessages,
-        IntentsBitField.Flags.MessageContent
+        IntentsBitField.Flags.MessageContent,
+        IntentsBitField.Flags.GuildVoiceStates,
     ]
 });
 
 const { connectToDatabase } = require('./utils/connectToDatabase');
+const { createPlayer } = require('./utils/createPlayer');
 
 client.commands = new Collection();
 module.exports = { client };
 
 connectToDatabase().then(async () => {
+    await createPlayer(client);
 
     const commandCategoriesPath = join(__dirname, 'commands');
     const commandCategoryFolders = readdirSync(commandCategoriesPath);
@@ -69,4 +72,4 @@ connectToDatabase().then(async () => {
     process.exit(1);
 }).then(() => {
     client.login(token);
-});  
+});
