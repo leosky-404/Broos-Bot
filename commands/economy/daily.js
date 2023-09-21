@@ -18,7 +18,7 @@ module.exports = {
         await interaction.deferReply();
 
         try {
-            let data = await economyDatabase.findOne({
+            const data = await economyDatabase.findOne({
                 userId: interaction.user.id,
                 guildId: interaction.guild.id
             });
