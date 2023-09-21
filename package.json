@@ -19,7 +19,9 @@
     "discord-player": "^6.6.3",
     "discord.js": "^14.13.0",
     "mediaplex": "^0.0.7",
+    "moment": "^2.29.4",
     "mongoose": "^7.5.1",
+    "openai": "^4.8.0",
     "replicate": "^0.18.0"
   }
 }
