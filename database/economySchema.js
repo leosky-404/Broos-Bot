@@ -28,6 +28,10 @@ const economySchema = new Schema({
     lastDaily: {
         type: Date,
         default: null,
+    },
+    lastWorked: {
+        type: Date,
+        default: null,
     }
 });
 
